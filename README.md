@@ -48,18 +48,6 @@ For system operation on your local machine for development and testing purposes,
 - PostgreSQL (pg - ElephantSQL for cloud database);
 - MetaMask (Ethereum Wallet with SepoliaEth Testnet).
 
-
-# Installation
-1) `git clone https://github.com/PedroMateus09/Projeto-Final-de-Curso.git`
-
-2) `cd Projeto-Final-de-Curso`
-
-3) `npm install [libraries]`
-   
-4)  `cd Front-End`
-
-5) `npx hardhat run server.js --network sepolia`
-
 # Analysis Results
 The project is expected to result in a functional and robust solution for the integration between the Ethereum blockchain and PostgreSQL. The solution will allow secure and transparent data storage, with the guarantee of integrity provided by blockchain and the query efficiency.
 
