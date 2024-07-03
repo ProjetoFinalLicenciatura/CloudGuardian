@@ -15,12 +15,6 @@ Its major objectives include establishing a durable system that enables the bloc
 
 This project was inspired by the increasing use of cloud computing for data storage and management, along with the growing cybersecurity threats that organizations face. As a result, many organizations have shifted their activities to cloud technology due to its associated benefits, such as affordability and accessibility. However, cloud databases encounter significant challenges related to security, compliance, and data privacy. To address these challenges, this project aims to create a secure and transparent way to store data by combining blockchain technology with cloud database systems. The immutable and decentralized nature of blockchain will help ensure data integrity, improve access control, and reduce the risk of tampering or unauthorized access.
 
-Basically, the system is designed to securely store confidential data, such as in this project's scenario, vehicle information, in a PostgreSQL type database hosted in the cloud. This will require backend programming to ensure smooth interaction between the database and smart contracts deployed on the Ethereum blockchain.
-The Ethereum blockchain has a testnet called Sepolia for the purpose of blockchain technology. To make it easier for us deploy and manage our block chains networks, we use the Alchemy provided by the blockchain as a service (BaaS).
-The Ethereum blockchain employs Proof of Stake (PoS) consensus algorithms and introduces smart contracts, which automate processes based on predefined conditions, ensuring transparency and integrity within the system. It is possible to observe in Figure, the first prototype proposal developed, which aims to merge blockchain technologies and cloud databases.
-
-![Architecture Image](Assets/Architecture.png)
-
 # Methodology
 To achieve the proposed objectives, the project will be divided into several stages:
 
@@ -35,6 +29,35 @@ To achieve the proposed objectives, the project will be divided into several sta
 - Frontend Application Development: User-friendly Web interface to facilitate interaction between the customer and the system, including features such as login, account creation and data management (interaction with database and blockchain).
 
 - Testing and Validation: The solution will be tested and validated in different scenarios to ensure its operation, where the actual implementation scenario will refer to a project called "Adaptive Traffic Control Using Cooperative Communication Through Visible Light". This scenario proposes communication between vehicles and infrastructures (V2V, V2I and I2V) through headlights, lampposts and traffic signs, offering a challenging and realistic environment to validate, evaluate the robustness and adaptability of our system.
+
+# Proposed Architecture
+Basically, the system is designed to securely store confidential data, such as in this project's scenario, vehicle information, in a PostgreSQL type database hosted in the cloud. This will require backend programming to ensure smooth interaction between the database and smart contracts deployed on the Ethereum blockchain.
+The Ethereum blockchain has a testnet called Sepolia for the purpose of blockchain technology. To make it easier for us deploy and manage our block chains networks, we use the Alchemy provided by the blockchain as a service (BaaS).
+The Ethereum blockchain employs Proof of Stake (PoS) consensus algorithms and introduces smart contracts, which automate processes based on predefined conditions, ensuring transparency and integrity within the system. It is possible to observe in Figure, the first prototype proposal developed, which aims to merge blockchain technologies and cloud databases.
+
+![Architecture Image](Assets/Architecture.png)
+
+It is possible to observe in the next Figure, a flowchart that represents the general functioning of our system based on user management and data management. It describes the decisions and conditional paths that determine execution based on user input, and includes time management elements, allowing for scheduled tasks to happen periodically.
+
+![FlowchartProgram Image](Assets/FlowchartProgram.drawio.png)
+
+# Entity Relationship Diagram
+An Entity Relationship Diagram (ERD) visually represents the relationships between database entities. It is crucial to understand the database structure and facilitate communication between stakeholders during planning and design. ERD's help identify entities, attributes and relationships between entities, thus enabling efficient database normalization and documentation. In this way, it is understood to be vital for the design, management and optimization of the database system of this project.
+It is possible to understand in Figure the relationships between entities and their associations. For greater detail on the creation of each table. Integration with database tools speeds up development processes, with Dia software being used for this development.
+
+![ERD Image](Assets/ERD.png)
+
+# Smart Contract
+The insertion of smart contracts into the blockchain network is carried out through a deployment process, which involves compiling the insert_contract contract source code and sending a special transaction to the Ethereum network to deploy the contract. Once deployed, we return the contract address so we can interact with it. 
+It is possible to observe in Figure, the source code for implementing the contract on the Ethereum network.
+
+![SmartContract Image](Assets/contractInsert.png)
+
+A contract called DataStorage was created with a data structure to store vehicle information, such as registration number and ID of the respective device that captured it. This contract consequently includes methods to interact with this data to store new data on the blockchain, and on the other hand another function to responsible for retrieving this information in a secure and transparent way. 
+When deployed on the blockchain, the smart contract becomes immutable and can be invoked by any user to perform specific operations. The use of events allows other interested parties in the network to be notified whenever new data is stored, thus allowing several advantages such as the impossibility of falsifying data on the network.
+It is possible to observe in the next Figure, the source code developed for the smart contract that allows interaction between the Ethereum network and the project system.
+
+![SmartContract Image](Assets/smartContract.png)
 
 # Prerequisites
 
@@ -69,20 +92,23 @@ are null and paid for by non-real monetary values.
 The results indicate that ServerV1 is the most efficient in terms of transaction speed, making it suitable for applications that require high responsiveness. ServerV2 performance suggests the need for specific optimizations, whether at the hardware or software level, to reduce transaction times and improve overall system efficiency.
 ServerV1 had the lowest transaction times across all metrics, indicating high efficiency in communication and transaction processing. ServerV3 had moderate transaction times, suggesting reasonable but lower performance than ServerV1. ServerV2 had the highest transaction times, suggesting possible inefficiencies in the hardware or software configuration that need to be investigated. It is possible to observe in Figures.
 
-![Architecture Image](Assets/TransactionTime_Results.png)
-![Architecture Image](Assets/TransactionTimes_Results2.png)
+![Results Image](Assets/TransactionTime_Results.png)
+![Results Image](Assets/TransactionTimes_Results2.png)
 
-ServerV1 is energy efficiency makes it a more sustainable choice, especially in scenarios where power consumption is a critical consideration. ServerV3, despite greater memory consumption, can offer specific benefits not captured by this analysis, such as greater capacity to manage large volumes of data or better performance in specific applications.
-ServerV1 and ServerV2 showed similar power consumption patterns, with ServerV1 being slightly more efficient, standing out in terms of reduced CPU and disk power consumption. ServerV3 showed significantly higher memory consumption, possibly due to different caching or data management techniques. It is possible to observe in Figures.
+In the first figure, we can observe that the transaction time increases as the data volume grows. However, the difference in transaction time across different servers is minimal, with about a 1 or 2 seconds difference between transactions involving 60 packages and those involving 60x10^12 packages. Consequently, it is difficult to determine which server version is superior in terms of transaction time for shipping.
+The secound figure data ServerV2 is the best choice for recovery transactions, as it shows consistently a recovery time of 0 seconds across all transaction sizes.
 
-![Architecture Image](Assets/EnergyComsumption_Results.png)
-![Architecture Image](Assets/EnergyComsumption_Results2.png)
+![Results Image](Assets/EnergyComsumption_Results.png)
+![Results Image](Assets/EnergyComsumption_Results2.png)
 
-ServerV3 may be better suited for resource-constrained environments such as personal PCs due to its balanced resource usage. While ServerV1 demonstrates high performance on servers, its high resource consumption on personal PCs may limit its applicability on these devices.
-ServerV1 used the most CPU and memory during send transactions on personal PCs, which can negatively impact efficiency on resource-constrained devices. ServerV2 demonstrated lower CPU usage but similar memory usage as ServerV1. ServerV3 showed balanced CPU and memory consumption, suggesting better suitability for operations on personal PCs. It is possible to observe in Figures.
+As we can see in the first figure, serverV1 shows consistently the lowest memory consumption across all transaction sizes, with equal CPU and Disk consumption compared to the other servers. Therefore, ServerV1 is the best choice for shipping transactions when it comes to energy consumption.
+When analyzing the graphic of the secound figure, we can conclude that serverV1 is again the best choice, for recovery transaction when it comes to energy consumption.
 
-![Architecture Image](Assets/EnergyComsumption_ResultsPC.png)
-![Architecture Image](Assets/EnergyComsumption_ResultsPC2.png)
+![Results Image](Assets/EnergyComsumption_ResultsPC.png)
+![Results Image](Assets/EnergyComsumption_ResultsPC2.png)
+
+The first figure, tells us that serverV2 has a lower CPU consumption than the other versions, however serverV3 has a lower memory consumption. We can conclude that serverV2 is the best choice when shipping transactions for energy consumption on a personal computer.
+The secound figure shows us that serverV1 used the most CPU and memory during send transactions on personal PCs, serverV2 demonstrated lower CPU usage but similar memory usage as ServerV1. ServerV3 showed balanced CPU and memory consumption, suggesting better suitability for operations on personal PCs. We can conclude that serverV2 is the best choice when recovering transactions for energy consumption on a personal computer.
 
 In Solidity, strings can support up to 2^256 − 1 bytes theoretically. However, practical concerns like gas costs or the block gas limit enforced by Ethereum significantly limit efficient on-chain data storage. In Ethereum, gas prices are mostly determined by the volume of information that is placed in storage. When we store a longer string, every character is 4 bytes thus increasing the size of the data and consequently escalating the expenses. 
 Considering that 'x' represents the gas price per byte and 'y' represents the number of packages to be stored in a string, we can create an equation depending on the gas price and the number of packages (set of 36 characters) in a string:
