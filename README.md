@@ -96,18 +96,21 @@ ServerV1 had the lowest transaction times across all metrics, indicating high ef
 ![Results Image](Assets/TransactionTimes_Results2.png)
 
 In the first figure, we can observe that the transaction time increases as the data volume grows. However, the difference in transaction time across different servers is minimal, with about a 1 or 2 seconds difference between transactions involving 60 packages and those involving 60x10^12 packages. Consequently, it is difficult to determine which server version is superior in terms of transaction time for shipping.
+
 The secound figure data ServerV2 is the best choice for recovery transactions, as it shows consistently a recovery time of 0 seconds across all transaction sizes.
 
 ![Results Image](Assets/EnergyComsumption_Results.png)
 ![Results Image](Assets/EnergyComsumption_Results2.png)
 
 As we can see in the first figure, serverV1 shows consistently the lowest memory consumption across all transaction sizes, with equal CPU and Disk consumption compared to the other servers. Therefore, ServerV1 is the best choice for shipping transactions when it comes to energy consumption.
+
 When analyzing the graphic of the secound figure, we can conclude that serverV1 is again the best choice, for recovery transaction when it comes to energy consumption.
 
 ![Results Image](Assets/EnergyComsumption_ResultsPC.png)
 ![Results Image](Assets/EnergyComsumption_ResultsPC2.png)
 
 The first figure, tells us that serverV2 has a lower CPU consumption than the other versions, however serverV3 has a lower memory consumption. We can conclude that serverV2 is the best choice when shipping transactions for energy consumption on a personal computer.
+
 The secound figure shows us that serverV1 used the most CPU and memory during send transactions on personal PCs, serverV2 demonstrated lower CPU usage but similar memory usage as ServerV1. ServerV3 showed balanced CPU and memory consumption, suggesting better suitability for operations on personal PCs. We can conclude that serverV2 is the best choice when recovering transactions for energy consumption on a personal computer.
 
 In Solidity, strings can support up to 2^256 − 1 bytes theoretically. However, practical concerns like gas costs or the block gas limit enforced by Ethereum significantly limit efficient on-chain data storage. In Ethereum, gas prices are mostly determined by the volume of information that is placed in storage. When we store a longer string, every character is 4 bytes thus increasing the size of the data and consequently escalating the expenses. 
