@@ -59,17 +59,9 @@ It is possible to observe in the next Figure, the source code developed for the 
 
 ![SmartContract Image](Assets/smartContract.png)
 
-# Prerequisites
+It is possible to observe in Figure, the Etherscan is a tool that offers a wide range of functionalities for monitoring the Ethereum blockchain network.is a tool that offers a wide range of functionalities for monitoring the Ethereum blockchain network. Its ease of use and the wealth of information it provides are highly valued. Etherscan not only facilitates data transparency and accessibility on the network but is also a powerful tool for improving ecosystem security.
 
-For system operation on your local machine for development and testing purposes, you need to install the following software:
-- Node.js (server-side JavaScript execution environment on a server machine, no browser required);
-- npm (Node Package Manager);
-- Express.js (express - framework for Node.js provides resources for building web servers);
-- JSON Web Token (jsonwebtoken - Internet standard for creating data with signature and/or optional encryption whose payload contains JSON);
-- Bcrypt (bcrypt - encryption library designed for Node. js);
-- HardHat (helmet - Compile and deploy smart contracts);
-- PostgreSQL (pg - ElephantSQL for cloud database);
-- MetaMask (Ethereum Wallet with SepoliaEth Testnet).
+![etherScan Image](Assets/Etherscan_Contract.png)
 
 # Analysis Results
 The project is expected to result in a functional and robust solution for the integration between the Ethereum blockchain and PostgreSQL. The solution will allow secure and transparent data storage, with the guarantee of integrity provided by blockchain and the query efficiency.
