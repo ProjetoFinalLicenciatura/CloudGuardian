@@ -63,6 +63,17 @@ It is possible to observe in Figure, the Etherscan is a tool that offers a wide 
 
 ![etherScan Image](Assets/Etherscan_Contract.png)
 
+# Application Programming Interface
+The development of web pages began on the Client side, using the programming languages HTML, CSS, and JavaScript, to interact with the back-end Server side. The following figures correspond to the web pages that Customers were able to interact with.
+
+![API Image](Assets/API_login-min.png)
+
+![API Image](Assets/API_menu-min.png)
+
+![API Image](Assets/API_interact-min.png)
+
+![API Image](Assets/API_DateRetrieve-min.png)
+
 # Analysis Results
 The project is expected to result in a functional and robust solution for the integration between the Ethereum blockchain and PostgreSQL. The solution will allow secure and transparent data storage, with the guarantee of integrity provided by blockchain and the query efficiency.
 
